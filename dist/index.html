@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='style.css'>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,100;1,400;1,500&display=swap"
+        rel="stylesheet">
+    <title>app</title>
+</head>
+
+<body>
+    <div class="app">
+        <h1 class="app__title">FTL: Прямая машина</h1>
+        <form class="app__form" action="#">
+            <div class="app__subtitle"> <span> 1 </span> Маршрут </div>
+            <div class="app__route-params-wrapper">
+                <div class="app__param">
+                    <label class="app__param-label" for="from"> Откуда</label>
+                    <input class="app__param-input" type="text" name="from">
+                </div>
+                <div class="app__param">
+                    <label class="app__param-label" for="to"> Куда</label>
+                    <input class="app__param-input" type="text" name="to">
+                </div>
+            </div>
+
+            <div class="app__subtitle"> <span> 2 </span> Транспорт </div>
+            <div class="app__params-transp-wrapper">
+                <div class="app__param">
+                    <label class="app__param-label" for="weight"> Грузоподъёмность</label>
+                    <div class='app__param-select'> <span name="weight"> Не выбран </span>
+                        <ul>
+                            <li>Вариант1</li>
+                            <li>Вариант2</li>
+                            <li>Вариант3333333333</li>
+                        </ul>
+                        <img src="../src/img/down.svg" alt="drop arrow">
+                    </div>
+                </div>
+                <div class="app__param">
+                    <label class="app__param-label" for="weight"> Способ погрузки</label>
+                    <div class='app__param-select'> <span name="method"> Не выбран </span>
+                        <ul>
+                            <li>Вариант1</li>
+                            <li>Вариант2</li>
+                            <li>Вариант3</li>
+                        </ul>
+                        <img src="../src/img/down.svg" alt="drop arrow">
+                    </div>
+                </div>
+            </div>
+
+            <div class="app__subtitle"> <span> 3 </span> Груз </div>
+            <div class="app__params-cargo-wrapper">
+                <div class="app__param" style="grid-area: weight;">
+                    <label class="app__param-label" for="type"> Тип груза</label>
+                    <div class='app__param-select' name='type'> <span name='type'> Не выбран </span>
+                        <ul>
+                            <li>Вариант1</li>
+                            <li>Вариант2</li>
+                            <li>Вариант3</li>
+                        </ul>
+                        <img src="../src/img/down.svg" alt="drop arrow">
+                    </div>
+                </div>
+
+                <div id="danger" class="app__param" style="grid-area: danger;">
+                    <label class="app__param-label" for="danger"> Класс опасности</label>
+                    <div class='app__param-select' name='danger'> <span name='danger'> Не выбран </span>
+                        <ul>
+                            <li>Вариант1</li>
+                            <li>Вариант2</li>
+                            <li>Вариант3</li>
+                        </ul>
+                        <img src="../src/img/down.svg" alt="drop arrow">
+                    </div>
+                </div>
+
+                <div class="app__param" style="grid-area: price;">
+                    <label class="app__param-label" for="price"> Объявленная ценность, ₽</label>
+                    <input class="app__param-input" type="number" placeholder="≥ 1" name="price">
+                </div>
+
+                <div class="app__param" style="grid-area: checkbox;">
+                    <div class="app__param-checkbox">
+                        <div class="checkbox ">
+                            <img src="../src/img/checked.svg" alt="checked">
+                        </div>
+                        <label class="app__param-label" for="regime"> Требуется температурный режим</label>
+                    </div>
+                </div>
+
+                <div id="regime" class="app__param " style="grid-area: min-regime;">
+                    <label class="app__param-label" for="min-regime"> От, °C</label>
+                    <input class="app__param-input" type="text" value='-21' name="min-regime">
+                </div>
+
+                <div id="regime" class="app__param " style="grid-area: max-regime;">
+                    <label class="app__param-label" for="max-regime"> До, °C </label>
+                    <input class="app__param-input" type="text" value="+23" name="max-regime">
+                </div>
+            </div>
+
+            <div class="app__subtitle"> <span> 4 </span> Время </div>
+            <div class="app__params-time-wrapper">
+                <div class="app__param">
+                    <label class="app__param-label" for="max-regime"> Когда прибыть на точку </label>
+                    <div class="app__param-radio-wrapper">
+                        <div class="app__param-radio">
+                            <span class='radio' name='from'></span>
+                            <span class='adress' name='from'>Адрес не указан</span>
+                            <span class='radio-select '>НЕ ВЫБРАНО</span>
+                        </div>
+                        <div class="app__param-radio">
+                            <span class='radio' name='to'></span>
+                            <span class=' adress' name='to'>Адрес не указан</span>
+                            <span class='radio-select'>НЕ ВЫБРАНО</span>
+                        </div>
+                        <span class="distance-info">700 км в день</span>
+                    </div>
+                </div>
+                <div class="app__param">
+                    <label class="app__param-label" for="comment"> Комментарий к заказу</label>
+                    <textarea class="app__param-textarea" name="comment"
+                        placeholder="Укажите особенности въезда на территорию склада или подъезда к адресу"
+                        rows="5"></textarea>
+                </div>
+            </div>
+
+            <div class="app__warning-message">
+                Для расчета стоимости необходимо ввести параметры груза, пункты отправки и
+                прибытия.
+            </div>
+        </form>
+    </div>
+
+
+    <script src="bundle.js"></script>
+</body>
+
+</html>

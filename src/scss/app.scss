@@ -1,0 +1,446 @@
+$var1: #343539;
+$var2: #FFFFFF;
+$var3: #CFCFCF;
+$var4: #EF483E;
+$var5: #4B4B4F;
+$var6: #ffffff;
+$var7: #717174;
+
+*,
+::after,
+::before {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    background: $var1;
+    color: $var2;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+}
+
+
+
+textarea::-webkit-input-placeholder,
+input::-webkit-input-placeholder {
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    line-height: 18px;
+    color: $var3;
+}
+
+textarea::-moz-placeholder,
+input::-moz-placeholder {
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    line-height: 18px;
+    color: $var3;
+}
+
+textarea:-ms-input-placeholder,
+input:-ms-input-placeholder {
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    line-height: 18px;
+    color: $var3;
+}
+
+textarea:-moz-placeholder,
+input:-moz-placeholder {
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    line-height: 18px;
+    color: $var3;
+}
+
+textarea::placeholder,
+input::placeholder {
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    line-height: 18px;
+    color: $var3;
+}
+
+.app__route-params-wrapper {
+    max-width: 730px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 1fr 1fr;
+}
+
+.app__params-transp-wrapper {
+    max-width: 356px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 48% 48%;
+    grid-column-gap: 12px;
+}
+
+.app__params-cargo-wrapper {
+    max-width: 356px;
+    width: 100%;
+    display: grid;
+    grid-column-gap: 12px;
+    grid-template-columns: 48% 48%;
+    ;
+    grid-template-areas:
+        "weight weight"
+        "danger price"
+        "checkbox checkbox"
+        "min-regime max-regime"
+    ;
+}
+
+.app__params-time-wrapper {
+    max-width: 730px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 1fr 1fr;
+}
+
+.app {
+    position: relative;
+    max-width: 1920px;
+    max-height: 1210px;
+    width: 100%;
+    height: 100%;
+    padding: 40px 167px 129px;
+    margin: 0 auto;
+
+    #regime {
+        display: none;
+    }
+
+
+    &__warning-message {
+        display: block;
+        position: absolute;
+        top: 128px;
+        left: 914px;
+        font-size: 15px;
+        font-style: normal;
+        font-weight: normal;
+        line-height: 18px;
+        max-width: 356px;
+        width: 100%;
+        height: 102px;
+        padding: 24px;
+        background: #4B4B4F;
+        box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    &__title {
+        white-space: nowrap;
+        font-size: 56px;
+        line-height: 68px;
+        max-width: 580px;
+        width: 100%;
+        height: 68px;
+    }
+
+    &__form {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    &__subtitle {
+        display: flex;
+        align-items: center;
+        width: 150px;
+        height: 30px;
+        white-space: nowrap;
+        font-size: 24px;
+        line-height: 30px;
+        margin: 24px 0 8px;
+
+        span {
+            background-color: $var4;
+            width: 24px;
+            height: 24px;
+
+            font-size: 16px;
+            line-height: 20px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 100%;
+            margin-right: 8px;
+        }
+    }
+
+    &__param {
+        position: relative;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin: 8px 0 8px;
+
+        &-label {
+            white-space: nowrap;
+            font-weight: normal;
+            font-size: 13px;
+            line-height: 16px;
+        }
+
+        &-input {
+            width: 100%;
+            height: 44px;
+            margin-top: 8px;
+            outline: none;
+            border: none;
+            padding: 0 14px;
+            font-size: 15px;
+            line-height: 18px;
+            -moz-appearance: textfield;
+
+            &::-webkit-outer-spin-button,
+            &::-webkit-inner-spin-button {
+                -webkit-appearance: none;
+            }
+        }
+
+        &-select {
+            position: relative;
+            width: 100%;
+            height: 44px;
+            margin-top: 8px;
+            padding: 0 25px 0 14px;
+            background-color: #fff;
+            font-weight: normal;
+            font-size: 15px;
+            line-height: 18px;
+            color: $var3;
+            display: flex;
+            align-items: center;
+
+            .filled {
+                overflow: hidden;
+                width: 100%;
+
+                white-space: nowrap;
+                background-image: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+                -webkit-background-clip: text;
+                background-clip: text;
+                color: transparent;
+            }
+
+            img {
+                position: absolute;
+                top: 20px;
+                right: 20px;
+                cursor: pointer;
+                z-index: 1;
+            }
+
+            .drop-rotate {
+                transform: rotate(180deg);
+            }
+
+            ul {
+                display: none;
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: 44px;
+                color: black;
+                background-color: #fff;
+                list-style: none;
+                padding: 0;
+                z-index: 2;
+
+                li {
+                    height: 28px;
+                    padding-left: 14px;                    
+                    display: flex;
+                    align-items: center;
+                    font-size: 14px;
+                    line-height: 17px;
+                    cursor: pointer;
+                    overflow: hidden;
+                }
+
+                li:hover {
+                    background-color: $var4;
+                    color: $var6;
+                }
+            }
+        }
+
+        &-checkbox {
+            grid-area: checkbox;
+            display: flex;
+            align-items: center;
+
+            .checkbox {
+                width: 24px;
+                height: 24px;
+                border: 2px solid $var2;
+                margin-right: 12px;
+
+                img {
+                    display: none;
+                }
+            }
+
+            .checked {
+                border: 2px solid $var4;
+                background-color: $var4;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                img {
+                    display: block;
+                }
+            }
+        }
+
+        &-radio-wrapper {
+            width: 100%;
+            margin: 6px 0;
+
+            .distance-info {
+                position: absolute;
+                top: 3px;
+                right: 2px;
+                font-weight: normal;
+                font-size: 13px;
+                line-height: 16px;
+            }
+
+            .app__param-radio {
+                position: relative;
+                background-color: $var5;
+                display: flex;
+                align-items: center;
+                margin: 2px 0;
+                padding-right: 137px;
+                height: 44px;
+                width: 100%;
+
+                .radio {
+                    width: 16px;
+                    height: 16px;
+                    border-radius: 100%;
+                    border: 4px solid $var2;
+                    margin: 0 12px;
+                    background-color: $var5;
+                }
+
+                .checked {
+                    border: 4px solid $var4;
+                }
+
+                .adress {
+                    overflow: hidden;
+                    width: 100%;
+                    font-weight: normal;
+                    font-size: 15px;
+                    line-height: 19px;
+                    color: $var3;
+                    white-space: nowrap;
+
+                    color: transparent;
+                    -webkit-background-clip: text;
+                    background-clip: text;
+                    background-image: linear-gradient(90deg, rgba(196, 196, 196, 1), rgba(196, 196, 196, 0));
+                }
+
+                .radio-select {
+                    position: absolute;
+                    right: 10px;
+                    background: $var7;
+                    opacity: 0.3;
+                    border-radius: 2px;
+                    width: 119px;
+                    height: 24px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    letter-spacing: 0.05em;
+                    font-size: 13px;
+                    font-weight: normal;
+                    line-height: 16px;
+                    color: $var2;
+                    text-transform: uppercase;
+                }
+
+                .selected {
+                    opacity: 1;
+                }
+
+            }
+        }
+
+        &-textarea {
+            width: 100%;
+            height: 80px;
+            resize: none;
+            outline: none;
+            margin-top: 8px;
+            padding: 13px 14px;
+            word-break: break-word;
+            font-family: 'Roboto', sans-serif;
+            font-size: 15px;
+            line-height: 18px;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+
+            &::-webkit-scrollbar {
+                width: 0px;
+            }
+        }
+    }
+}
+
+
+
+@media (max-width: 375px) {
+
+    .app__params-cargo-wrapper {
+        grid-template-areas:
+            " weight price "
+            " checkbox checkbox "
+            " min-regime max-regime "
+        ;
+    }
+
+
+    .app {
+        padding: 40px 16px;
+
+        &__warning-message {
+            position: relative;
+            top: 0;
+            left: 0;
+            right: 0;
+        }
+
+        #danger {
+            display: none;
+        }
+
+        &__title {
+            height: 40px;
+            font-size: 32px;
+            line-height: 40px;
+        }
+
+        &__subtitle {
+            height: 24px;
+            font-size: 20px;
+            line-height: 24px;
+        }
+
+    }
+
+}
